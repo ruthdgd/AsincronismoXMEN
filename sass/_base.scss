@@ -1,0 +1,21 @@
+@import url('https://fonts.cdnfonts.com/css/vtc-komixation');
+@import url('https://fonts.cdnfonts.com/css/salad-trial');
+// font-family: 'Salad Trial', sans-serif;
+// font-family: 'VTCKomixationCaps', sans-serif;            
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+main{
+  background-image: url(../assets/img/fondo-rojo.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+
+}

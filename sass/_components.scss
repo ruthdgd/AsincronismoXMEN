@@ -1,0 +1,14 @@
+.search{
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  .search-s{
+    height: 2rem;
+    background-color: $black;
+    border-radius: 4px;
+    color: $yellow;
+    font-family: 'Salad Trial', sans-serif;
+    font-size: 1.5rem;
+}
+}

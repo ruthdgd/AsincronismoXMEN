@@ -1,3 +1,53 @@
+@import url("https://fonts.cdnfonts.com/css/vtc-komixation");
+@import url("https://fonts.cdnfonts.com/css/salad-trial");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
 
+main {
+  background-image: url(../assets/img/fondo-rojo.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.navbar nav {
+  width: 100%;
+  background-color: #1d1e1d;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar nav .nav-logo {
+  width: 10rem;
+}
+.navbar nav .nav-boton {
+  padding: 5px;
+  height: 3rem;
+  background-color: #db0404;
+  border-radius: 4px;
+  color: white;
+  font-family: "VTCKomixationCaps", sans-serif;
+}
+
+.search {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.search .search-s {
+  height: 2rem;
+  background-color: #1d1e1d;
+  border-radius: 4px;
+  color: #fbf007;
+  font-family: "Salad Trial", sans-serif;
+  font-size: 1.5rem;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -3,34 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lord of the Rings</title>
+  <link rel="stylesheet" href="style.css">
+  <title>X-MEN</title>
 </head>
 <body>
-  <header>
+  <header class="navbar">
     <nav>
-      <h1>X-MEN</h1>
-      <button>Crear</button>
+      <img class="nav-logo" src="./assets/img/logoX-men.png" alt="X-MEN titulo">
+      <button class="nav-boton">Crear Personaje</button>
     </nav>
   </header>
   <main>
-    <form action="">
-      <select name="" id="">
+    <!-- ********************FILTROS DE BUSQUEDA******************** -->
+    <form class="search" action="seleccionar">
+      <select class="search-s" name="" id="">
         <option value="">Buscar por...</option>
         <option value="">X-MEN</option>
         <option value="">Enemigos</option>
         <option value="">Categoria</option>
       </select>
-      <select name="" id="">
+      <select class="search-s"  name="" id="">
         <option value="">Buscar por...</option>
         <option value="">Fundadores</option>
         <option value="">Miembros frecuentes</option>
       </select>
-      <select name="" id="">
+      <select class="search-s"  name="" id="">
         <option value="">Buscar por...</option>
         <option value="">Mutantes</option>
-        <option value="">No mutantes/option>
+        <option value="">No mutantes</option>
+        <option value="">Robot</option>
       </select>
-      <select name="" id="">
+      <select class="search-s"  name="" id="">
         <option value="">Buscar por...</option>
         <option value="">Omega</option>
         <option value="">Alfa</option>
@@ -38,9 +41,10 @@
         <option value="">Gamma</option>
         <option value="">Delta</option>
         <option value="">Epsilon</option>
-        <option value="">Humano sin poderes</option>
+        <option value="">Sin Categoría</option>
       </select>
     </form>
+    <!-- ********************TARJETITAS DEL INICIO******************** -->
     <section>
       <div>
         <p>Nombre del personaje</p>
@@ -51,6 +55,7 @@
         </div>
       </div>
     </section>
+    <!-- ********************TARJETA GRANDE CON DETALLES******************* -->
     <section>
       <button>Volver atrás</button>
       <div>
@@ -72,6 +77,7 @@
       <button>Borrar</button>
       <button>Editar</button>
     </section>
+    <!-- ********************FORMULARIO PARA CARGAR PERSONAJE******************** -->
     <section>
       <form action="">
         <label for="">Nombre del Personaje</label>
