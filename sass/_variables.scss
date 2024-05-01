@@ -16,3 +16,7 @@ $breakpoint-large: 1024px;
        @media (max-width: $breakpoint-large) { @content; }
   }
 }
+
+.hidden{
+  display: none !important;
+}

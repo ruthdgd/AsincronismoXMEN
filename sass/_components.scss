@@ -9,6 +9,99 @@
     border-radius: 4px;
     color: $yellow;
     font-family: 'Salad Trial', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.5rem;    
+  }
+  // .search-s option{
+  //   &:hover{
+  //     background-color: $red;
+  //     color: $black;
+  //     }
+  // }
 }
+
+//CARDS PEQUEÑAS
+
+.card-s{
+  width: 20rem;
+  background-color: $red;
+  border-radius: 8px;
+  border: 5px $black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover{
+    border: 5px outset $yellow;
+    border-radius: 8px;
+  }
 }
+
+.card-img{
+  width: 18rem;
+  height: 30rem;
+  background-color: $black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.card-name{
+  font-size: 1.5rem;
+  font-family: 'VTCKomixationCaps', sans-serif;  
+  color: $yellow;  
+  text-align: center;
+  padding: 0.6rem;
+}
+
+.card-tags{ 
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 4px;
+  .card-tags-text{
+    font-family:'VTCKomixationCaps', sans-serif;
+    background-color: $red;
+    color: $yellow;
+    border-radius: 4px;
+    padding: 5px;
+  }
+}
+
+//BOTON DE TODOS LAS CARDS Y FORM
+
+.boton-div{
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+.boton-form{
+  background-color: $yellow;
+  font-family: 'Salad Trial', sans-serif; 
+  color: $black;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+
+  &:hover{
+    background-color: $red;
+    color: $yellow
+  }
+}
+
+//TARJETAS GRANDES CON TODOS LOS DATOS
+
+.card-l{
+  padding: 1rem;
+  background-color: $red;  
+  display: flex;
+  gap: 1rem;
+  .card-l-img-box{
+    gap: 10rem;
+  }
+ 
+}
+
+
+
+
+

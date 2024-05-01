@@ -1,5 +1,9 @@
 @import url("https://fonts.cdnfonts.com/css/vtc-komixation");
 @import url("https://fonts.cdnfonts.com/css/salad-trial");
+.hidden {
+  display: none !important;
+}
+
 *,
 *::before,
 *::after {
@@ -10,7 +14,7 @@
 }
 
 main {
-  background-image: url(../assets/img/fondo-rojo.avif);
+  background-image: linear-gradient(black, #1d1e1d);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -35,6 +39,11 @@ main {
   font-family: "VTCKomixationCaps", sans-serif;
 }
 
+.card {
+  padding: 2rem;
+  display: flex;
+}
+
 .search {
   padding-top: 1rem;
   display: flex;
@@ -48,6 +57,80 @@ main {
   color: #fbf007;
   font-family: "Salad Trial", sans-serif;
   font-size: 1.5rem;
+}
+
+.card-s {
+  width: 20rem;
+  background-color: #db0404;
+  border-radius: 8px;
+  border: 5px #1d1e1d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-s:hover {
+  border: 5px outset #fbf007;
+  border-radius: 8px;
+}
+
+.card-img {
+  width: 18rem;
+  height: 30rem;
+  background-color: #1d1e1d;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.card-name {
+  font-size: 1.5rem;
+  font-family: "VTCKomixationCaps", sans-serif;
+  color: #fbf007;
+  text-align: center;
+  padding: 0.6rem;
+}
+
+.card-tags {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 4px;
+}
+.card-tags .card-tags-text {
+  font-family: "VTCKomixationCaps", sans-serif;
+  background-color: #db0404;
+  color: #fbf007;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.boton-div {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.boton-form {
+  background-color: #fbf007;
+  font-family: "Salad Trial", sans-serif;
+  color: #1d1e1d;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+.boton-form:hover {
+  background-color: #db0404;
+  color: #fbf007;
+}
+
+.card-l {
+  padding: 1rem;
+  background-color: #db0404;
+  display: flex;
+  gap: 1rem;
+}
+.card-l .card-l-img-box {
+  gap: 10rem;
 }
 
 /*# sourceMappingURL=style.css.map */
