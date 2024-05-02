@@ -1,5 +1,6 @@
 .search{
   padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -60,8 +61,9 @@
   gap: 4px;
   .card-tags-text{
     font-family:'VTCKomixationCaps', sans-serif;
-    background-color: $red;
-    color: $yellow;
+    font-size: 1rem;
+    background-color: $black;
+    color: $white;
     border-radius: 4px;
     padding: 5px;
   }
@@ -91,14 +93,79 @@
 //TARJETAS GRANDES CON TODOS LOS DATOS
 
 .card-l{
-  padding: 1rem;
-  background-color: $red;  
+  width: 80%;
+  padding: 1rem;  
+  margin: 0 auto;
+  background-color: $red; 
+  border: 5px outset $yellow;
+  border-radius: 8px; 
   display: flex;
+  justify-content: space-around;
   gap: 1rem;
+
   .card-l-img-box{
-    gap: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
- 
+  .card-description{
+    width: 50%;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    h3{
+    font-family: 'VTCKomixationCaps', sans-serif;   
+    font-size: 2rem; 
+    }
+
+    h5{
+    font-family: 'VTCKomixationCaps', sans-serif; 
+    font-size: 1.5rem;  
+    }
+
+    p{
+      font-family: 'Salad Trial', sans-serif;
+      font-size: 1.2rem;
+    }
+    .card-boton{
+      display: flex;
+      justify-content: space-around;
+    }
+  } 
+}
+
+//FORMULARIO PARA AGREGAR PERSONAJES
+.create{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .search-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label{
+    font-family: 'VTCKomixationCaps', sans-serif; 
+    font-size: 1.5rem;
+  }  
+
+  input{
+    height: 2rem;
+    background-color: $black;
+    border-radius: 4px;
+    color: $yellow;
+    font-family: 'VTCKomixationCaps', sans-serif; 
+  }
+
+  .create-title{
+    font-family: 'VTCKomixationCaps', sans-serif; 
+    color: $yellow;
+    font-size: 1.5rem;
+  }
 }
 
 

@@ -20,9 +20,13 @@
   }
 }
 
-//SECCION DE LAS TARJETAS PEQUEÑAS
-.card{
-  padding:2rem;
-  display: flex;
+//FOOTER
+
+footer{
+  padding: 2rem;
+  background-color: $black;
+  font-family: 'VTCKomixationCaps', sans-serif;
+  text-align: center;
+  color: $red;
 }
 

@@ -50,8 +50,8 @@
         <p class="card-name">Nombre del personaje</p>   
         <div class="card-img"></div>                  
         <div class="card-tags">
-          <p class="card-tags-text">tag 1</p>
-          <p class="card-tags-text">tag 2</p>
+          <h6 class="card-tags-text">tag 1</h6>
+          <h6 class="card-tags-text">tag 2</h6>
         </div>
         <div class="boton-div">
           <button class="boton-form">Ver detalle</button>
@@ -59,69 +59,75 @@
       </div>
     </section>
     <!-- ********************TARJETA GRANDE CON DETALLES******************* -->
-    <section class="card-l">
+    <section class="card-l hidden">
       <div class="card-l-img-box">
         <button class="boton-form">Volver atrás</button>
         <div class="card-img"></div> 
       </div>
-      <div class="card-description">
-        <div class="card-description-box">
+      <div class="card-description">        
           <h3>Nombre del personaje</h3>    
           <h5>Descripcion</h5>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aliquam, nesciunt quia doloribus officiis in officia beatae repellat fugiat nulla, consequatur, laborum unde impedit sequi sed earum accusamus. Excepturi, non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aliquam, nesciunt quia doloribus officiis in officia beatae repellat fugiat nulla, consequatur, laborum unde impedit sequi sed earum accusamus. Excepturi, non.</p>
           <h5>Nombre real</h5>
-          <h5>edad</h5>
-        </div>
-        <div class="card-l-tags">
-          <p>tag 1</p>
-          <p>tag 2</p>
+          <h5>edad</h5>      
+        <div class="card-tags">
+          <h6 class="card-tags-text">tag 1</h6>
+          <h6 class="card-tags-text">tag 2</h6>
         </div>  
-        <div> 
+        <div class="card-boton"> 
           <button class="boton-form">Borrar</button>
           <button class="boton-form">Editar</button>
         </div>            
       </div>     
     </section>
     <!-- ********************FORMULARIO PARA CARGAR PERSONAJE******************** -->
-    <section>
-      <form action="">
+    <section class="card-l">
+      <form class="create" action="">
         <label for="">Nombre del Personaje</label>
         <input type="text">
         <label for="">Descipción</label>
         <input type="text">
-        <label for="">X-MEN</label>  
-        <select name="" id="">
-          <option value="">Buscar por...</option>
-          <option value="">Fundadores</option>
-          <option value="">Miembros frecuentes</option>
-        </select>  
-        <label for="">Enemigos</label>
-        <select name="" id="">
-          <option value="">Buscar por...</option>
-          <option value="">Mutantes</option>
-          <option value="">No mutantes/option>
-        </select>
-        <label for="">Categoria</label>
-        <select name="" id="">
-          <option value="">Buscar por...</option>
-          <option value="">Omega</option>
-          <option value="">Alfa</option>
-          <option value="">Beta</option>
-          <option value="">Gamma</option>
-          <option value="">Delta</option>
-          <option value="">Epsilon</option>
-          <option value="">Humano sin poderes</option>
-        </select>
-        <h3>Detalles del Personaje</h3>
+        <div class="search">
+          <div class="search-box">
+            <label for="">X-MEN</label>  
+            <select class="search-s" name="" id="">
+              <option value="">Buscar por...</option>
+              <option value="">Fundadores</option>
+              <option value="">Miembros frecuentes</option>
+            </select>  
+          </div>
+          <div class="search-box">
+            <label for="">Enemigos</label>
+            <select class="search-s" name="" id="">
+              <option value="">Buscar por...</option>
+              <option value="">Mutantes</option>
+              <option value="">No mutantes/option>
+            </select>
+          </div>
+          <div class="search-box">
+            <label for="">Categoria</label>
+            <select class="search-s" name="" id="">
+              <option value="">Buscar por...</option>
+              <option value="">Omega</option>
+              <option value="">Alfa</option>
+              <option value="">Beta</option>
+              <option value="">Gamma</option>
+              <option value="">Delta</option>
+              <option value="">Epsilon</option>
+              <option value="">Humano sin poderes</option>
+            </select>
+          </div>
+        </div>
+        <h3 class="create-title">Detalles del Personaje</h3>
         <label for="">Imagen del Personaje</label>
         <input type="text">
         <label for="">Nombre real del Personaje</label>
         <input type="text">
         <label for="">Edad</label>
         <input type="number">
-        <div>
-          <button>Cancelar</button>
-          <button>Crear Personaje</button>
+        <div class="card-boton">
+          <button class="boton-form">Cancelar</button>
+          <button class="boton-form">Crear Personaje</button>
         </div>
       </form>
     </section>
