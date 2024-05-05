@@ -1,72 +1,118 @@
 .search{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  .search-s{
-    height: 2rem;
-    background-color: $black;
-    border-radius: 4px;
-    color: $yellow;
-    font-family: 'Salad Trial', sans-serif;
-    font-size: 1.5rem;    
+
+  @include respond-to(small){   
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
-  // .search-s option{
-  //   &:hover{
-  //     background-color: $red;
-  //     color: $black;
-  //     }
-  // }
+
+  @include respond-to(large){  
+    width: 100%; 
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    
+    }
+
+    .search-s{
+      height: 2rem;
+      background-color: $black;
+      border-radius: 4px;
+      color: $yellow;
+      font-family: 'Salad Trial', sans-serif;
+      font-size: 1.5rem;    
+      } 
 }
 
 //CARDS PEQUEÑAS
 
-.card-s{
-  width: 20rem;
-  background-color: $red;
-  border-radius: 8px;
-  border: 5px $black;
+.card{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &:hover{
-    border: 5px outset $yellow;
-    border-radius: 8px;
-  }
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
+.card-s{
+   @include respond-to(small){
+    width: 18rem;
+    margin-bottom: 1rem;
+    background-color: $red;
+    border-radius: 8px;
+    border: 5px $black; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     
+    &:hover{
+      border: 5px outset $yellow;
+      border-radius: 8px;
+    }
+  }
+
+  @include respond-to(large){
+    width: 20rem;
+  } 
+}
+
+//IMAGEN PARA TODAS LAS TARJETAS
+
 .card-img{
-  width: 18rem;
-  height: 30rem;
-  background-color: $black;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+
+  @include respond-to(small){
+    width: 16rem;
+    height: 26rem;
+    border-radius: 8px;
+    background-color: $black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  @include respond-to(large){
+    width: 18rem;
+    height: 30rem;
+  }  
 }
 
 .card-name{
-  font-size: 1.5rem;
-  font-family: 'VTCKomixationCaps', sans-serif;  
-  color: $yellow;  
-  text-align: center;
-  padding: 0.6rem;
+  
+  @include respond-to(small){
+    font-size: 1.2rem;
+    font-family: 'VTCKomixationCaps', sans-serif;  
+    color: $yellow;  
+    text-align: center;
+    padding: 0.6rem;
+  }
+
+  @include respond-to(large){
+   font-size: 1.5rem; 
+  } 
 }
 
 .card-tags{ 
-  padding: 0.5rem;
-  display: flex;
-  justify-content: space-around;
-  gap: 4px;
-  .card-tags-text{
-    font-family:'VTCKomixationCaps', sans-serif;
-    font-size: 1rem;
-    background-color: $black;
-    color: $white;
-    border-radius: 4px;
-    padding: 5px;
+
+  @include respond-to(small){
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 4px;
+
+    .card-tags-text{
+      font-family:'VTCKomixationCaps', sans-serif;
+      font-size: 1rem;
+      background-color: $black;
+      color: $white;
+      border-radius: 4px;
+      padding: 5px;
+    }
   }
+ 
 }
 
 //BOTON DE TODOS LAS CARDS Y FORM
@@ -93,79 +139,104 @@
 //TARJETAS GRANDES CON TODOS LOS DATOS
 
 .card-l{
-  width: 80%;
-  padding: 1rem;  
-  margin: 0 auto;
-  background-color: $red; 
-  border: 5px outset $yellow;
-  border-radius: 8px; 
-  display: flex;
-  justify-content: space-around;
-  gap: 1rem;
 
-  .card-l-img-box{
+  @include respond-to(small){
+    width: 80%;
+    padding: 1rem;  
+    margin: 0 auto;   
+    background-color: $red; 
+    border: 5px outset $yellow;
+    border-radius: 8px; 
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+
+    .card-l-img-box{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .card-description{
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    
+      h3{
+        font-family: 'VTCKomixationCaps', sans-serif;   
+        font-size: 1.5rem; 
+      }
+
+      h5{
+        font-family: 'VTCKomixationCaps', sans-serif; 
+        font-size: 1rem;  
+      }
+
+      p{
+        width: 100%;
+        font-family: 'Salad Trial', sans-serif;
+        font-size: 1.2rem;
+      }
+
+      .card-boton{
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+
+  @include respond-to(large){
+    display: flex;
+    justify-content: space-around;
     gap: 1rem;
   }
-  .card-description{
-    width: 50%;
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    
-    h3{
-    font-family: 'VTCKomixationCaps', sans-serif;   
-    font-size: 2rem; 
-    }
-
-    h5{
-    font-family: 'VTCKomixationCaps', sans-serif; 
-    font-size: 1.5rem;  
-    }
-
-    p{
-      font-family: 'Salad Trial', sans-serif;
-      font-size: 1.2rem;
-    }
-    .card-boton{
-      display: flex;
-      justify-content: space-around;
-    }
-  } 
 }
 
 //FORMULARIO PARA AGREGAR PERSONAJES
 .create{
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 
-  .search-box{
+  @include respond-to(small){
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    .search-box{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    label{
+      font-family: 'VTCKomixationCaps', sans-serif; 
+      font-size: 1rem;
+    }  
+
+    input{
+      height: 2rem;
+      background-color: $black;
+      border-radius: 4px;
+      color: $yellow;
+      font-family: 'VTCKomixationCaps', sans-serif; 
+    }
+
+    .create-title{
+      font-family: 'VTCKomixationCaps', sans-serif; 
+      color: $yellow;
+      font-size: 1rem;
+    }
   }
 
-  label{
-    font-family: 'VTCKomixationCaps', sans-serif; 
-    font-size: 1.5rem;
-  }  
+  @include respond-to(large){
+    label{     
+      font-size: 1.5rem;
+    } 
+    .create-title{
+      font-size: 1.5rem;
+   } 
 
-  input{
-    height: 2rem;
-    background-color: $black;
-    border-radius: 4px;
-    color: $yellow;
-    font-family: 'VTCKomixationCaps', sans-serif; 
   }
 
-  .create-title{
-    font-family: 'VTCKomixationCaps', sans-serif; 
-    color: $yellow;
-    font-size: 1.5rem;
-  }
 }
 
 

@@ -47,12 +47,26 @@ footer {
   color: #db0404;
 }
 
-.search {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+@media (min-width: 375px) {
+  .search {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .search {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
 }
 .search .search-s {
   height: 2rem;
@@ -63,50 +77,82 @@ footer {
   font-size: 1.5rem;
 }
 
-.card-s {
-  width: 20rem;
-  background-color: #db0404;
-  border-radius: 8px;
-  border: 5px #1d1e1d;
+.card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.card-s:hover {
-  border: 5px outset #fbf007;
-  border-radius: 8px;
-}
-
-.card-img {
-  width: 18rem;
-  height: 30rem;
-  background-color: #1d1e1d;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.card-name {
-  font-size: 1.5rem;
-  font-family: "VTCKomixationCaps", sans-serif;
-  color: #fbf007;
-  text-align: center;
-  padding: 0.6rem;
-}
-
-.card-tags {
-  padding: 0.5rem;
-  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  gap: 4px;
 }
-.card-tags .card-tags-text {
-  font-family: "VTCKomixationCaps", sans-serif;
-  font-size: 1rem;
-  background-color: #1d1e1d;
-  color: white;
-  border-radius: 4px;
-  padding: 5px;
+
+@media (min-width: 375px) {
+  .card-s {
+    width: 18rem;
+    margin-bottom: 1rem;
+    background-color: #db0404;
+    border-radius: 8px;
+    border: 5px #1d1e1d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-s:hover {
+    border: 5px outset #fbf007;
+    border-radius: 8px;
+  }
+}
+@media (min-width: 1024px) {
+  .card-s {
+    width: 20rem;
+  }
+}
+
+@media (min-width: 375px) {
+  .card-img {
+    width: 16rem;
+    height: 26rem;
+    border-radius: 8px;
+    background-color: #1d1e1d;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+@media (min-width: 1024px) {
+  .card-img {
+    width: 18rem;
+    height: 30rem;
+  }
+}
+
+@media (min-width: 375px) {
+  .card-name {
+    font-size: 1.2rem;
+    font-family: "VTCKomixationCaps", sans-serif;
+    color: #fbf007;
+    text-align: center;
+    padding: 0.6rem;
+  }
+}
+@media (min-width: 1024px) {
+  .card-name {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 375px) {
+  .card-tags {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 4px;
+  }
+  .card-tags .card-tags-text {
+    font-family: "VTCKomixationCaps", sans-serif;
+    font-size: 1rem;
+    background-color: #1d1e1d;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+  }
 }
 
 .boton-div {
@@ -128,71 +174,90 @@ footer {
   color: #fbf007;
 }
 
-.card-l {
-  width: 80%;
-  padding: 1rem;
-  margin: 0 auto;
-  background-color: #db0404;
-  border: 5px outset #fbf007;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-around;
-  gap: 1rem;
+@media (min-width: 375px) {
+  .card-l {
+    width: 80%;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: #db0404;
+    border: 5px outset #fbf007;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .card-l .card-l-img-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .card-l .card-description {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .card-l .card-description h3 {
+    font-family: "VTCKomixationCaps", sans-serif;
+    font-size: 1.5rem;
+  }
+  .card-l .card-description h5 {
+    font-family: "VTCKomixationCaps", sans-serif;
+    font-size: 1rem;
+  }
+  .card-l .card-description p {
+    width: 100%;
+    font-family: "Salad Trial", sans-serif;
+    font-size: 1.2rem;
+  }
+  .card-l .card-description .card-boton {
+    display: flex;
+    justify-content: space-around;
+  }
 }
-.card-l .card-l-img-box {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.card-l .card-description {
-  width: 50%;
-  padding-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.card-l .card-description h3 {
-  font-family: "VTCKomixationCaps", sans-serif;
-  font-size: 2rem;
-}
-.card-l .card-description h5 {
-  font-family: "VTCKomixationCaps", sans-serif;
-  font-size: 1.5rem;
-}
-.card-l .card-description p {
-  font-family: "Salad Trial", sans-serif;
-  font-size: 1.2rem;
-}
-.card-l .card-description .card-boton {
-  display: flex;
-  justify-content: space-around;
+@media (min-width: 1024px) {
+  .card-l {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+  }
 }
 
-.create {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+@media (min-width: 375px) {
+  .create {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .create .search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .create label {
+    font-family: "VTCKomixationCaps", sans-serif;
+    font-size: 1rem;
+  }
+  .create input {
+    height: 2rem;
+    background-color: #1d1e1d;
+    border-radius: 4px;
+    color: #fbf007;
+    font-family: "VTCKomixationCaps", sans-serif;
+  }
+  .create .create-title {
+    font-family: "VTCKomixationCaps", sans-serif;
+    color: #fbf007;
+    font-size: 1rem;
+  }
 }
-.create .search-box {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.create label {
-  font-family: "VTCKomixationCaps", sans-serif;
-  font-size: 1.5rem;
-}
-.create input {
-  height: 2rem;
-  background-color: #1d1e1d;
-  border-radius: 4px;
-  color: #fbf007;
-  font-family: "VTCKomixationCaps", sans-serif;
-}
-.create .create-title {
-  font-family: "VTCKomixationCaps", sans-serif;
-  color: #fbf007;
-  font-size: 1.5rem;
+@media (min-width: 1024px) {
+  .create label {
+    font-size: 1.5rem;
+  }
+  .create .create-title {
+    font-size: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
