@@ -16,24 +16,24 @@
   <main>
     <!-- ********************FILTROS DE BUSQUEDA******************** -->
     <form class="search" action="seleccionar">
-      <select class="search-s" name="" id="">
-        <option value="">Buscar por...</option>
-        <option value="">X-MEN</option>
-        <option value="">Enemigos</option>
-        <option value="">Categoria</option>
+      <select class="search-s" name="Buscar" id="tipo-personaje">
+        <option value="Buscar">Buscar por...</option>
+        <option value="Personaje">Personaje</option>
+        <option value="Especie">Especie</option>
+        <option value="Categoria">Categoria</option>
       </select>
-      <select class="search-s"  name="" id="">
-        <option value="">Buscar por...</option>
-        <option value="">Fundadores</option>
-        <option value="">Miembros frecuentes</option>
+      <select class="search-s"  name="" id="tipo-xmen">
+        <option value="Buscar">Buscar por...</option>
+        <option value="Fundadores">X-MEN</option>
+        <option value="Miembros frecuentes">Villano</option>
       </select>
-      <select class="search-s"  name="" id="">
+      <select class="search-s"  name="" id="tipo-enemigo">
         <option value="">Buscar por...</option>
+        <option value="">Humano</option>
         <option value="">Mutantes</option>
-        <option value="">No mutantes</option>
         <option value="">Robot</option>
       </select>
-      <select class="search-s"  name="" id="">
+      <select class="search-s"  name="" id="tipo-nivel">
         <option value="">Buscar por...</option>
         <option value="">Omega</option>
         <option value="">Alfa</option>
@@ -45,21 +45,22 @@
       </select>
     </form>
     <!-- ********************TARJETITAS DEL INICIO******************** -->
-    <section class="card">
-      <div class="card-s">
+    <section class="card" id="card-personaje-incio">
+      <!-- <div class="card-s" >
         <p class="card-name">Nombre del personaje</p>   
         <div class="card-img"></div>                  
         <div class="card-tags">
           <h6 class="card-tags-text">tag 1</h6>
           <h6 class="card-tags-text">tag 2</h6>
+          <h6 class="card-tags-text">tag 2</h6>
         </div>
         <div class="boton-div">
           <button class="boton-form">Ver detalle</button>
         </div>
-      </div>
+      </div> -->
     </section>
     <!-- ********************TARJETA GRANDE CON DETALLES******************* -->
-    <section class="card-l">
+    <section class="card-l" id="card-personaje-descripcion">
       <div class="card-l-img-box">
         <button class="boton-form">Volver atrás</button>
         <div class="card-img"></div> 
@@ -72,6 +73,7 @@
           <h5>edad</h5>      
         <div class="card-tags">
           <h6 class="card-tags-text">tag 1</h6>
+          <h6 class="card-tags-text">tag 2</h6>
           <h6 class="card-tags-text">tag 2</h6>
         </div>  
         <div class="card-boton"> 
@@ -135,6 +137,10 @@
   <footer>
     <h3>Creado por Ruth Delgado</h3>
   </footer>
-  
-</body>
+  <script src="./main.js"></script>
+  <script src="./get.js"></script>
+  <script src="./post.js"></script>
+  <script src="./delete.js"></script>
+  <script src="./put.js"></script>
+  </body>
 </html>
