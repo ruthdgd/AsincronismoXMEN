@@ -46,8 +46,8 @@ const crearCardDetalle = (propiedadCard) =>{
               <h6 class="card-tags-text">${propiedadCard.categoria}</h6>
             </div>  
             <div class="card-boton"> 
-              <button class="boton-form">Borrar</button>
-              <button class="boton-form">Editar</button>
+              <button class="boton-form" id="borrado" data-id="${propiedadCard.id}">Borrar</button>
+              <button class="boton-form editado" id="boton-editado">Editar</button>
             </div>            
           </div>`;
 }

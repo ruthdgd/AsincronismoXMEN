@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>X-MEN</title>
 </head>
 <body>
@@ -17,31 +17,31 @@
     <!-- ********************FILTROS DE BUSQUEDA******************** -->
     <form class="search" action="seleccionar">
       <select class="search-s" name="Buscar" id="tipo-personaje">
-        <option value="Buscar">Buscar por...</option>
+        <option value="unset">Buscar por...</option>
         <option value="Personaje">Personaje</option>
         <option value="Especie">Especie</option>
         <option value="Categoria">Categoria</option>
       </select>
       <select class="search-s"  name="" id="tipo-xmen">
-        <option value="Buscar">Buscar por...</option>
+        <option value="unset">Buscar por...</option>
         <option value="Fundadores">X-MEN</option>
         <option value="Miembros frecuentes">Villano</option>
       </select>
       <select class="search-s"  name="" id="tipo-enemigo">
-        <option value="">Buscar por...</option>
-        <option value="">Humano</option>
-        <option value="">Mutantes</option>
-        <option value="">Robot</option>
+        <option value="unset">Buscar por...</option>
+        <option value="Humano">Humano</option>
+        <option value="Mutantes">Mutantes</option>
+        <option value="Robot">Robot</option>
       </select>
       <select class="search-s"  name="" id="tipo-nivel">
-        <option value="">Buscar por...</option>
-        <option value="">Omega</option>
-        <option value="">Alfa</option>
-        <option value="">Beta</option>
-        <option value="">Gamma</option>
-        <option value="">Delta</option>
-        <option value="">Epsilon</option>
-        <option value="">Sin Categoría</option>
+        <option value="unset">Buscar por...</option>
+        <option value="Omega">Omega</option>
+        <option value="Alfa">Alfa</option>
+        <option value="Beta">Beta</option>
+        <option value="Gamma">Gamma</option>
+        <option value="Delta">Delta</option>
+        <option value="Epsilon">Epsilon</option>
+        <option value="Sin Categoria">Sin Categoría</option>
       </select>
     </form>
     <!-- ********************TARJETITAS DEL INICIO******************** -->
@@ -85,48 +85,48 @@
     <!-- ********************FORMULARIO PARA CARGAR PERSONAJE******************** -->
     <section class="card-l">
       <form class="create" action="">
-        <label for="">Nombre del Personaje</label>
+        <label for="name-personaje">Nombre del Personaje</label>
         <input type="text" id="name-personaje">
-        <label for="">Descipción</label>
+        <label for="descripcion-personaje">Descipción</label>
         <input type="text" id="descripcion-personaje">
         <div class="search">
           <div class="search-box">
-            <label for="">Personaje</label>  
-            <select class="search-s" name="Buscar" id="tipo-personaje-form">
-              <option value="Buscar">Buscar por...</option>
-              <option value="Personaje">Personaje</option>
-              <option value="Especie">Especie</option>
-              <option value="Categoria">Categoria</option>
+            <label for="tipo-personaje-form">Personaje</label>  
+            <select class="search-s" name="personaje" id="tipo-personaje-form">
+              <option value="unset">Buscar por...</option>
+              <option value="X-MEN">X-MEN</option>
+              <option value="Villano">Villano</option>         
             </select>
           </div>
           <div class="search-box">
-            <label for="">Especie</label>
-            <select class="search-s"  name="" id="tipo-especie-form">
-              <option value="Buscar">Buscar por...</option>
-              <option value="Fundadores">X-MEN</option>
-              <option value="Miembros frecuentes">Villano</option>
+            <label for="tipo-especie-form">Especie</label>
+            <select class="search-s"  name="especie" id="tipo-especie-form">
+              <option value="unset">Buscar por...</option>
+              <option value="Humano">Humano</option>
+              <option value="Mutantes">Mutantes</option>
+              <option value="Robot">Robot</option>               
             </select>
           </div>
           <div class="search-box">
-            <label for="">Categoria</label>
-            <select class="search-s" name="" id="tipo-categoria-form">
-              <option value="">Buscar por...</option>
-              <option value="">Omega</option>
-              <option value="">Alfa</option>
-              <option value="">Beta</option>
-              <option value="">Gamma</option>
-              <option value="">Delta</option>
-              <option value="">Epsilon</option>
-              <option value="">Humano sin poderes</option>
+            <label for="tipo-categoria-form">Categoria</label>
+            <select class="search-s" name="Categoria" id="tipo-categoria-form">
+              <option value="unset">Buscar por...</option>
+              <option value="Omega">Omega</option>
+              <option value="Alfa">Alfa</option>
+              <option value="Beta">Beta</option>
+              <option value="Gamma">Gamma</option>
+              <option value="Delta">Delta</option>
+              <option value="Epsilon">Epsilon</option>
+              <option value="Sin Categoria">Sin Categoria</option>
             </select>
           </div>
         </div>
         <h3 class="create-title">Detalles del Personaje</h3>
-        <label for="">Imagen del Personaje</label>
+        <label for="avatar-personaje">Imagen del Personaje</label>
         <input type="text" id="avatar-personaje">
-        <label for="">Nombre real del Personaje</label>
+        <label for="nombre-real-personaje">Nombre real del Personaje</label>
         <input type="text" id="nombre-real-personaje">
-        <label for="">Edad</label>
+        <label for="edad-personaje">Edad</label>
         <input type="number" id="edad-personaje">
         <div class="card-boton">
           <button class="boton-form">Cancelar</button>
@@ -138,10 +138,10 @@
   <footer>
     <h3>Creado por Ruth Delgado</h3>
   </footer>
-  <script src="./main.js"></script>
-  <script src="./get.js"></script>
-  <script src="./post.js"></script>
-  <script src="./delete.js"></script>
-  <script src="./put.js"></script>
+  <script src="./scripts/main.js"></script>
+  <script src="./scripts/get.js"></script>
+  <script src="./scripts/post.js"></script>
+  <script src="./scripts/delete.js"></script>
+  <script src="./scripts/put.js"></script>
   </body>
 </html>
