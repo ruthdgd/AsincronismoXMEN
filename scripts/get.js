@@ -29,7 +29,7 @@ const crearCard = (propiedadCard) => {
           </div>`
 }
 
-const crearCardDetalle = (propiedadCard) =>{
+export const crearCardDetalle = (propiedadCard) =>{
   return `<div class="card-l-img-box">
             <button class="boton-form">Volver atrás</button>
             <img class="card-img" src= "${propiedadCard.avatar}" alt=""> 
@@ -53,7 +53,7 @@ const crearCardDetalle = (propiedadCard) =>{
 }
 
 
-const imprimirCard = (caracters, creadorCard, container) =>{
+export const imprimirCard = (caracters, creadorCard, container) =>{
   let contador = ""
   for (let creador of caracters) {
     contador += creadorCard(creador)
