@@ -77,8 +77,9 @@ export const imprimirCard = (caracters, creadorCard, container) =>{
 }
 
 export const crearCardDetalle = (propiedadCard, tarjetaDeDetalle) =>{
-   return tarjetaDeDetalle.innerHTML = `<div class="card-l-img-box">
-            <button class="boton-form" id="boton-form">Volver atrás</button>
+   return tarjetaDeDetalle.innerHTML = `<div class="card-postal">
+          <div class="card-l-img-box">
+            <button class="boton-form boton-volver" id="boton-form">Volver atrás</button>
             <img class="card-img" id="card-img" src= "${propiedadCard.avatar}" alt=""> 
           </div>
           <div class="card-description">        
@@ -96,6 +97,7 @@ export const crearCardDetalle = (propiedadCard, tarjetaDeDetalle) =>{
               <button class="boton-form" id="borrado" data-id="${propiedadCard.id}">Borrar</button>
               <button class="boton-form editar" id="editado" data-id="${propiedadCard.id}">Editar</button>
             </div>            
+          </div>
           </div>`        
 }
 
