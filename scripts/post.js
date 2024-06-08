@@ -1,4 +1,4 @@
-export const botonCrearPersonaje= document.getElementById("crear-personaje-boton").addEventListener("click", () => {
+const botonCrearPersonaje= document.getElementById("crear-personaje-boton").addEventListener("click", () => {
         const nombrePersonaje = document.getElementById("name-personaje").value
         const descripcionPersonaje = document.getElementById("descripcion-personaje").value
         const tipoPersonaje = document.getElementById("tipo-personaje-form").value
@@ -35,4 +35,4 @@ export const botonCrearPersonaje= document.getElementById("crear-personaje-boton
             console.log("Personaje creado:", data)
           })
           .catch((error) => console.error(error))         
-      })
+})

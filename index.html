@@ -10,7 +10,7 @@
   <header class="navbar">
     <nav>
       <img class="nav-logo" src="./assets/img/logoX-men.png" alt="X-MEN titulo">
-      <button class="nav-boton">Crear Personaje</button>
+      <button class="nav-boton" id="nuevoPersonaje">Crear Personaje</button>
     </nav>
   </header>
   <main>
@@ -22,18 +22,18 @@
         <option value="Especie">Especie</option>
         <option value="Categoria">Categoria</option>
       </select>
-      <select class="search-s"  name="" id="tipo-xmen">
+      <select class="search-s hidden"  name="" id="tipo-xmen">
         <option value="unset">Buscar por...</option>
-        <option value="Fundadores">X-MEN</option>
-        <option value="Miembros frecuentes">Villano</option>
+        <option value="Xmen">X-MEN</option>
+        <option value="Villanos">Villano</option>
       </select>
-      <select class="search-s"  name="" id="tipo-enemigo">
+      <select class="search-s hidden"  name="" id="tipo-enemigo">
         <option value="unset">Buscar por...</option>
         <option value="Humano">Humano</option>
-        <option value="Mutantes">Mutantes</option>
+        <option value="Mutantes">Mutante</option>
         <option value="Robot">Robot</option>
       </select>
-      <select class="search-s"  name="" id="tipo-nivel">
+      <select class="search-s hidden"  name="" id="tipo-nivel">
         <option value="unset">Buscar por...</option>
         <option value="Omega">Omega</option>
         <option value="Alfa">Alfa</option>
@@ -44,8 +44,13 @@
         <option value="Sin Categoria">Sin Categoría</option>
       </select>
     </form>
+    <!-- *************************Spinner****************************** -->
+    <div class="spinner hidden" id="spinner">
+      <img src="./assets/img/Xpinner.png" alt="Cargando">
+    </div>
+  <section class="frente" id="frente">
     <!-- ********************TARJETITAS DEL INICIO******************** -->
-    <section class="card hidden" id="card-personaje-incio">
+    <section class="card" id="card-personaje-incio">
       <!-- <div class="card-s" >
         <p class="card-name">Nombre del personaje</p>   
         <div class="card-img"></div>                  
@@ -60,7 +65,7 @@
       </div> -->
     </section>
     <!-- ********************TARJETA GRANDE CON DETALLES******************* -->
-    <section class="card-l" id="card-personaje-descripcion">
+    <section class="card-l hidden" id="card-personaje-descripcion">
       <!-- <div class="card-l-img-box">
         <button class="boton-form">Volver atrás</button>
         <div class="card-img"></div> 
@@ -83,7 +88,7 @@
       </div>      -->
     </section>
     <!-- ********************FORMULARIO PARA CARGAR PERSONAJE******************** -->
-    <section class="card-l hidden">
+    <section class="card-l hidden" id="form-personaje-nuevo">
       <form class="create" action="">
         <label for="name-personaje">Nombre del Personaje</label>
         <input type="text" id="name-personaje">
@@ -135,12 +140,12 @@
       </form>
     </section>
  <!-- ********************FORMULARIO PARA EDITAR PERSONAJE******************** -->
-    <section class="card-l" id="editar-card-descripcion">
-      <!-- <form class="create" action="">
+    <section class="card-l hidden" id="editar-card-descripcion">
+      <form class="create hidden" id="formEditado" action="">
         <label for="name-personaje">Nombre del Personaje</label>
-        <input type="text" id="name-personaje">
-        <label for="descripcion-personaje">Descipción</label>
-        <input type="text" id="descripcion-personaje">
+        <input type="text" id="name-personaje" value="${datos.name}">
+        <label for="descripcion-personaje">Descripción</label>
+        <input type="text" id="descripcion-personaje" value="${datos.descripcion}">
         <div class="search">
           <div class="search-box">
             <label for="tipo-personaje-form">Personaje</label>  
@@ -160,7 +165,7 @@
             </select>
           </div>
           <div class="search-box">
-            <label for="tipo-categoria-form">Categoria</label>
+            <label for="tipo-categoria-form">Categoría</label>
             <select class="search-s" name="Categoria" id="tipo-categoria-form">
               <option value="unset">Buscar por...</option>
               <option value="Omega">Omega</option>
@@ -175,18 +180,18 @@
         </div>
         <h3 class="create-title">Detalles del Personaje</h3>
         <label for="avatar-personaje">Imagen del Personaje</label>
-        <input type="text" id="avatar-personaje">
+        <input type="text" id="avatar-personaje" value="${datos.avatar}">
         <label for="nombre-real-personaje">Nombre real del Personaje</label>
-        <input type="text" id="nombre-real-personaje">
+        <input type="text" id="nombre-real-personaje" value="${datos.nombreReal}">
         <label for="edad-personaje">Edad</label>
-        <input type="number" id="edad-personaje">
+        <input type="number" id="edad-personaje" value="${datos.edad}">
         <div class="card-boton">
-          <button class="boton-form">Cancelar</button>
-          <button class="boton-form" id="crear-personaje-boton">Crear Personaje</button>
+          <button class="boton-form" id="cancelar-personaje">Cancelar</button>
+          <button class="boton-form" id="editar-personaje-boton" data-id="${datos.id}">Editar personaje</button>
         </div>
-      </form> -->
+      </form>
     </section>
-
+  </section>  
   </main>
   <footer>
     <h3>Creado por Ruth Delgado</h3>
@@ -196,5 +201,5 @@
   <script type="module" src="./scripts/post.js"></script>
   <script type="module" src="./scripts/delete.js"></script>
   <script type="module" src="./scripts/put.js"></script>
-  </body>
+</body>
 </html>

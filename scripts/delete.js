@@ -1,6 +1,3 @@
-// delete.js
-import { crearCardDetalle, imprimirCard } from "./get.js";
-
 document.addEventListener("DOMContentLoaded", () => { 
   document.body.addEventListener("click", function (event) {   
     if (
