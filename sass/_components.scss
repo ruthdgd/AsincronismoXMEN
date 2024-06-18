@@ -216,6 +216,7 @@
 .create{
 
   @include respond-to(small){
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -223,6 +224,7 @@
     .search-box{
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 0.5rem;
     }
 

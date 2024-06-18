@@ -1,5 +1,8 @@
+const cardPersonajeInicio = document.getElementById("card-personaje-inicio")
+const cardPersonajeDescripcion = document.getElementById("card-personaje-descripcion")
+const formEditarPersonaje = document.getElementById("editar-card-descripcion")
 const formDeEditar = document.getElementById("formEditado")
-let personajes = [];
+let personajes = []
 
 fetch("https://66230da83e17a3ac846e8339.mockapi.io/api/personaje")
   .then(result => result.json())
@@ -16,7 +19,7 @@ fetch("https://66230da83e17a3ac846e8339.mockapi.io/api/personaje")
       editarCardDetalle(traerPersonaje, formDeEditar)
     }
     
-    const editButton = document.getElementById("editar-personaje-boton");
+    const editButton = document.getElementById("editar-personaje-boton")
     editButton.addEventListener("click", async () => {
       const updatedData = {
         name: formDeEditar.querySelector("#name-personaje").value,
@@ -27,7 +30,7 @@ fetch("https://66230da83e17a3ac846e8339.mockapi.io/api/personaje")
         personaje: formDeEditar.querySelector("#tipo-personaje-form").value,
         especie: formDeEditar.querySelector("#tipo-especie-form").value,
         categoria: formDeEditar.querySelector("#tipo-categoria-form").value,
-      };
+      }
 
       try {
         const response = await fetch(
