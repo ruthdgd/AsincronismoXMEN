@@ -21,7 +21,7 @@ fetch("https://66230da83e17a3ac846e8339.mockapi.io/api/personaje")
     filtroTipoXmen.addEventListener("change", () => {
       xpinner()
       cardPersonajeInicio.innerHTML = ""
-     let filtroPorCategoria = filterByCategories(personajes, filtroTipoXmen)
+      let filtroPorCategoria = filterByCategories(personajes, filtroTipoXmen)
       imprimirCard(filtroPorCategoria, crearCard, cardPersonajeInicio)
     })
     filtroTipoespecie.addEventListener("change", () => {

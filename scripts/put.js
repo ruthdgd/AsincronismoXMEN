@@ -19,41 +19,43 @@ fetch("https://66230da83e17a3ac846e8339.mockapi.io/api/personaje")
       editarCardDetalle(traerPersonaje, formDeEditar)
     }
     
-    const editButton = document.getElementById("editar-personaje-boton")
-    editButton.addEventListener("click", async () => {
-      const updatedData = {
-        name: formDeEditar.querySelector("#name-personaje").value,
-        descripcion: formDeEditar.querySelector("#descripcion-personaje").value,
-        avatar: formDeEditar.querySelector("#avatar-personaje").value,
-        nombreReal: formDeEditar.querySelector("#nombre-real-personaje").value,
-        edad: formDeEditar.querySelector("#edad-personaje").value,
-        personaje: formDeEditar.querySelector("#tipo-personaje-form").value,
-        especie: formDeEditar.querySelector("#tipo-especie-form").value,
-        categoria: formDeEditar.querySelector("#tipo-categoria-form").value,
-      }
-
-      try {
-        const response = await fetch(
-          `https://66230da83e17a3ac846e8339.mockapi.io/api/personaje/${idDePersonaje}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(updatedData)
+    document.addEventListener('click', async (event) => {
+      if (event.target && event.target.id === "editar-personaje-boton") {
+        event.preventDefault()
+        Swal.fire({
+          title: "¿Estas seguro de que deseas editar el personaje?",
+          showDenyButton: true, 
+          confirmButtonText: "Editar",
+          denyButtonText: "Cancelar"
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            const updateData = {
+              name: formDeEditar.querySelector("#name-personaje").value,
+              descripcion: formDeEditar.querySelector("#descripcion-personaje").value,
+              avatar: formDeEditar.querySelector("#avatar-personaje").value,
+              nombreReal: formDeEditar.querySelector("#nombre-real-personaje").value,
+              edad: formDeEditar.querySelector("#edad-personaje").value,
+              personaje: formDeEditar.querySelector("#tipo-personaje-form").value,
+              especie: formDeEditar.querySelector("#tipo-especie-form").value,
+              categoria: formDeEditar.querySelector("#tipo-categoria-form").value,
+            }
+            try{
+              const response = await fetch(`https://66230da83e17a3ac846e8339.mockapi.io/api/personaje/${idDePersonaje}`, {
+                method: "PUT",
+                headers: {"Content-Type": "aplication/json"},
+                body: JSON.stringify(updateData)
+              })
+              if (response.ok) {
+                const data = await response.json()
+                window.location.href = "index.html"
+              }
+            } catch(error) {console.error("Error al editar el personaje", error)}
           }
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        console.log("Character edited successfully!");
-      } catch (error) {
-        console.error("Error editing character:", error);
+        })
       }
-    });
-  })
-.catch((error) => console.error(error));
+    })
+  }
+)
 
 export const editarCardDetalle = (datos, formDeEditar ) => {
     formDeEditar.innerHTML = `<form class="create hidden" id="formEditado" action="">
