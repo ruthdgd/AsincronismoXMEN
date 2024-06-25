@@ -83,6 +83,23 @@ footer {
   background-color: #db0404;
 }
 
+.spinner {
+  width: 12rem;
+  margin: 0 auto;
+}
+.spinner .spinner-img {
+  width: 12rem;
+  animation: giro 1.3s infinite;
+}
+
+@keyframes giro {
+  0%, 100% {
+    transform: scale(0, 1);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
 .card {
   display: flex;
   flex-wrap: wrap;
