@@ -71,9 +71,5 @@ Tarjeta más grande, donde se encuentran toda la información importante del per
 
 ![Filtro](assets/img/tarjetita2.PNG)
 
-## Crear Personaje 
 
-El botón "Crear Personaje, abre un formulario donde se deben completar los datos solicitados.
-
-![Filtro](assets/img/xmen-form.PNG)
 
