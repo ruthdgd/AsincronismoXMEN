@@ -1,63 +1,3 @@
-.search{
-
-  @include respond-to(small){   
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  @include respond-to(large){  
-    width: 100%; 
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
-    
-    }
-
-    .search-s{      
-      padding: 6px;
-      background-color: $black;
-      border-radius: 4px;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      color: $yellow;
-      font-family: 'Salad Trial', sans-serif;
-      font-size: 1.5rem;  
-      
-      &::hover{
-        background-color: $red;
-      }
-      } 
-}
-
-// *********SPINNER**********
-
-.spinner{
-  width: 12rem;
-  margin: 0 auto;
-
-  .spinner-img{
-    width: 12rem;
-    animation: giro 1.3s infinite;
-  }
-}
-
-@keyframes giro {
-0%, 100% {
-  transform: scale(0,1);
-}
-50% {
-  transform: scale(1);
-}
-}
-
 //CARDS PEQUEÑAS
 
 .card{
@@ -144,27 +84,6 @@
  
 }
 
-//BOTON DE TODOS LAS CARDS Y FORM
-
-.boton-div{
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-}
-.boton-form{
-  background-color: $yellow;
-  font-family: 'Salad Trial', sans-serif; 
-  color: $black;
-  font-size: 1rem;
-  padding: 0.5rem;
-  border-radius: 4px;
-
-  &:hover{
-    background-color: $red;
-    color: $yellow
-  }
-}
-
 //TARJETAS GRANDES CON TODOS LOS DATOS
 
 .card-l{
@@ -172,7 +91,8 @@
   @include respond-to(small){
     width: 80%;
     padding: 1rem;  
-    margin: 0 auto;   
+    margin: 0 auto;
+    
     background-color: $red; 
     border: 5px outset $yellow;
     border-radius: 8px; 
@@ -280,8 +200,3 @@
   }
 
 }
-
-
-
-
-

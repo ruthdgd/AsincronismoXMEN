@@ -1,0 +1,20 @@
+//BOTON DE TODOS LAS CARDS Y FORM
+
+.boton-div{
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+.boton-form{
+  background-color: $yellow;
+  font-family: 'Salad Trial', sans-serif; 
+  color: $black;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+
+  &:hover{
+    background-color: $red;
+    color: $yellow
+  }
+}

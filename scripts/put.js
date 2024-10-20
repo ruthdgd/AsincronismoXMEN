@@ -1,64 +1,74 @@
-const cardPersonajeInicio = document.getElementById("card-personaje-inicio")
-const cardPersonajeDescripcion = document.getElementById("card-personaje-descripcion")
-const formEditarPersonaje = document.getElementById("editar-card-descripcion")
-const formDeEditar = document.getElementById("formEditado")
-let personajes = []
+const cardPersonajeInicio = document.getElementById("card-personaje-inicio");
+const cardPersonajeDescripcion = document.getElementById(
+  "card-personaje-descripcion"
+);
+
+const formDeEditar = document.getElementById("formEditado");
+let personajes = [];
 
 fetch("https://66230da83e17a3ac846e8339.mockapi.io/api/personaje")
-  .then(result => result.json())
-  .then(result => {
-    personajes = result
-    console.log(personajes)
+  .then((result) => result.json())
+  .then((result) => {
+    personajes = result;
 
-    const urlParams = new URLSearchParams(window.location.search)
-    const idDePersonaje = urlParams.get("idDetalle")
-    const traerPersonaje = personajes.find(personaje => personaje.id == idDePersonaje)
+    const urlParams = new URLSearchParams(window.location.search);
+    const idDePersonaje = urlParams.get("idDetalle");
+    const traerPersonaje = personajes.find(
+      (personaje) => personaje.id == idDePersonaje
+    );
 
     if (traerPersonaje) {
-      console.log(traerPersonaje)
-      editarCardDetalle(traerPersonaje, formDeEditar)
+      editarCardDetalle(traerPersonaje, formDeEditar);
     }
-    
-    document.addEventListener('click', async (event) => {
+
+    document.addEventListener("click", async (event) => {
       if (event.target && event.target.id === "editar-personaje-boton") {
-        event.preventDefault()
+        event.preventDefault();
         Swal.fire({
           title: "¿Estas seguro de que deseas editar el personaje?",
-          showDenyButton: true, 
+          showDenyButton: true,
           confirmButtonText: "Editar",
-          denyButtonText: "Cancelar"
+          denyButtonText: "Cancelar",
         }).then(async (result) => {
           if (result.isConfirmed) {
             const updateData = {
               name: formDeEditar.querySelector("#name-personaje").value,
-              descripcion: formDeEditar.querySelector("#descripcion-personaje").value,
+              descripcion: formDeEditar.querySelector("#descripcion-personaje")
+                .value,
               avatar: formDeEditar.querySelector("#avatar-personaje").value,
-              nombreReal: formDeEditar.querySelector("#nombre-real-personaje").value,
+              nombreReal: formDeEditar.querySelector("#nombre-real-personaje")
+                .value,
               edad: formDeEditar.querySelector("#edad-personaje").value,
-              personaje: formDeEditar.querySelector("#tipo-personaje-form").value,
+              personaje: formDeEditar.querySelector("#tipo-personaje-form")
+                .value,
               especie: formDeEditar.querySelector("#tipo-especie-form").value,
-              categoria: formDeEditar.querySelector("#tipo-categoria-form").value,
-            }
-            try{
-              const response = await fetch(`https://66230da83e17a3ac846e8339.mockapi.io/api/personaje/${idDePersonaje}`, {
-                method: "PUT",
-                headers: {"Content-Type": "aplication/json"},
-                body: JSON.stringify(updateData)
-              })
+              categoria: formDeEditar.querySelector("#tipo-categoria-form")
+                .value,
+            };
+            try {
+              const response = await fetch(
+                `https://66230da83e17a3ac846e8339.mockapi.io/api/personaje/${idDePersonaje}`,
+                {
+                  method: "PUT",
+                  headers: { "Content-Type": "aplication/json" },
+                  body: JSON.stringify(updateData),
+                }
+              );
               if (response.ok) {
-                const data = await response.json()
-                window.location.href = "index.html"
+                const data = await response.json();
+                window.location.href = "index.html";
               }
-            } catch(error) {console.error("Error al editar el personaje", error)}
+            } catch (error) {
+              console.error("Error al editar el personaje", error);
+            }
           }
-        })
+        });
       }
-    })
-  }
-)
+    });
+  });
 
-export const editarCardDetalle = (datos, formDeEditar ) => {
-    formDeEditar.innerHTML = `<form class="create hidden" id="formEditado" action="">
+export const editarCardDetalle = (datos, formDeEditar) => {
+  formDeEditar.innerHTML = `<form class="create hidden" id="formEditado" action="">
          <label for="name-personaje">Nombre del Personaje</label>
          <input type="text" id="name-personaje" value="${datos.name}">
          <label for="descripcion-personaje">Descripción</label>
@@ -67,7 +77,7 @@ export const editarCardDetalle = (datos, formDeEditar ) => {
            <div class="search-box">
              <label for="tipo-personaje-form">Personaje</label>  
              <select class="search-s" name="personaje" id="tipo-personaje-form">
-               <option value="unset">Buscar por...</option>
+             <option value="#">${datos.personaje}</option>
                <option value="X-MEN">X-MEN</option>
                <option value="Villano">Villano</option>         
              </select>
@@ -75,7 +85,7 @@ export const editarCardDetalle = (datos, formDeEditar ) => {
            <div class="search-box">
              <label for="tipo-especie-form">Especie</label>
              <select class="search-s"  name="especie" id="tipo-especie-form">
-               <option value="unset">Buscar por...</option>
+             <option value="#">${datos.especie}</option>
                <option value="Humano">Humano</option>
                <option value="Mutantes">Mutante</option>
                <option value="Robot">Robot</option>               
@@ -84,8 +94,8 @@ export const editarCardDetalle = (datos, formDeEditar ) => {
            <div class="search-box">
              <label for="tipo-categoria-form">Categoría</label>
              <select class="search-s" name="Categoria" id="tipo-categoria-form">
-               <option value="unset">Buscar por...</option>
-               <option value="Omega">Omega</option>
+             <option value="#">${datos.categoria}</option>  
+             <option value="Omega">Omega</option>
                <option value="Alfa">Alfa</option>
                <option value="Beta">Beta</option>
                <option value="Gamma">Gamma</option>
@@ -106,8 +116,5 @@ export const editarCardDetalle = (datos, formDeEditar ) => {
            <button class="boton-form" id="cancelar-personaje">Cancelar</button>
            <button class="boton-form" id="editar-personaje-boton" data-id="${datos.id}">Editar personaje</button>
          </div>
-       </form>`
- }
-
-
-
+       </form>`;
+};
