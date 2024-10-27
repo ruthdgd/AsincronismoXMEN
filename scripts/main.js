@@ -2,9 +2,15 @@ const filtroTipo = document.getElementById("tipo-personaje");
 const botonNuevoPersonaje = document.getElementById("nuevoPersonaje");
 const frente = document.getElementById("frente");
 const filtroForm = document.getElementById("buscador");
+const formDeEditar = document.getElementById("formEditado");
+const cardPersonajeDescripcion = document.getElementById(
+  "card-personaje-descripcion"
+);
 
 botonNuevoPersonaje.addEventListener("click", () => {
   document.getElementById("card-personaje-incio").classList.add("hidden");
+  formDeEditar.classList.add("hidden");
+  cardPersonajeDescripcion.classList.add("hidden");
   document.getElementById("form-personaje-nuevo").classList.remove("hidden");
   filtroForm.classList.add("hidden");
 });

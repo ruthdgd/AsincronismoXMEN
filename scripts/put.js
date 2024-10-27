@@ -31,35 +31,89 @@ fetch("https://66230da83e17a3ac846e8339.mockapi.io/api/personaje")
           denyButtonText: "Cancelar",
         }).then(async (result) => {
           if (result.isConfirmed) {
+            // Obtener los valores de los campos de edición
+            const nombrePersonaje = formDeEditar
+              .querySelector("#name-personaje")
+              .value.trim();
+            const descripcionPersonaje = formDeEditar
+              .querySelector("#descripcion-personaje")
+              .value.trim();
+            const avatarPersonaje = formDeEditar
+              .querySelector("#avatar-personaje")
+              .value.trim();
+            const nRealPersonaje = formDeEditar
+              .querySelector("#nombre-real-personaje")
+              .value.trim();
+            const edadPersonaje = formDeEditar
+              .querySelector("#edad-personaje")
+              .value.trim();
+            const tipoPersonaje = formDeEditar
+              .querySelector("#tipo-personaje-form")
+              .value.trim();
+            const especiePersonaje = formDeEditar
+              .querySelector("#tipo-especie-form")
+              .value.trim();
+            const categoriaPersonaje = formDeEditar
+              .querySelector("#tipo-categoria-form")
+              .value.trim();
+
+            // Validación de campos vacíos y valores "unset" de los selects
+            if (
+              !nombrePersonaje ||
+              !descripcionPersonaje ||
+              !avatarPersonaje ||
+              !nRealPersonaje ||
+              !edadPersonaje ||
+              tipoPersonaje === "unset" ||
+              especiePersonaje === "unset" ||
+              categoriaPersonaje === "unset"
+            ) {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Por favor, completa todos los campos y selecciona una opción válida para tipo, especie y categoría.",
+              });
+              return;
+            }
+
+            // Si todos los campos están completos, realizar la solicitud PUT
             const updateData = {
-              name: formDeEditar.querySelector("#name-personaje").value,
-              descripcion: formDeEditar.querySelector("#descripcion-personaje")
-                .value,
-              avatar: formDeEditar.querySelector("#avatar-personaje").value,
-              nombreReal: formDeEditar.querySelector("#nombre-real-personaje")
-                .value,
-              edad: formDeEditar.querySelector("#edad-personaje").value,
-              personaje: formDeEditar.querySelector("#tipo-personaje-form")
-                .value,
-              especie: formDeEditar.querySelector("#tipo-especie-form").value,
-              categoria: formDeEditar.querySelector("#tipo-categoria-form")
-                .value,
+              name: nombrePersonaje,
+              descripcion: descripcionPersonaje,
+              avatar: avatarPersonaje,
+              nombreReal: nRealPersonaje,
+              edad: edadPersonaje,
+              personaje: tipoPersonaje,
+              especie: especiePersonaje,
+              categoria: categoriaPersonaje,
             };
+
             try {
               const response = await fetch(
                 `https://66230da83e17a3ac846e8339.mockapi.io/api/personaje/${idDePersonaje}`,
                 {
                   method: "PUT",
-                  headers: { "Content-Type": "aplication/json" },
+                  headers: { "Content-Type": "application/json" },
                   body: JSON.stringify(updateData),
                 }
               );
               if (response.ok) {
                 const data = await response.json();
-                window.location.href = "index.html";
+                Swal.fire({
+                  icon: "success",
+                  title: "Personaje editado con éxito",
+                  text: "El personaje ha sido actualizado.",
+                }).then(() => {
+                  window.location.href = "index.html";
+                });
               }
             } catch (error) {
               console.error("Error al editar el personaje", error);
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Ocurrió un error al editar el personaje.",
+              });
             }
           }
         });
@@ -77,7 +131,7 @@ export const editarCardDetalle = (datos, formDeEditar) => {
            <div class="search-box">
              <label for="tipo-personaje-form">Personaje</label>  
              <select class="search-s" name="personaje" id="tipo-personaje-form">
-             <option value="#">${datos.personaje}</option>
+             <option>${datos.personaje}</option>
                <option value="X-MEN">X-MEN</option>
                <option value="Villano">Villano</option>         
              </select>
@@ -85,7 +139,7 @@ export const editarCardDetalle = (datos, formDeEditar) => {
            <div class="search-box">
              <label for="tipo-especie-form">Especie</label>
              <select class="search-s"  name="especie" id="tipo-especie-form">
-             <option value="#">${datos.especie}</option>
+             <option>${datos.especie}</option>
                <option value="Humano">Humano</option>
                <option value="Mutantes">Mutante</option>
                <option value="Robot">Robot</option>               
@@ -94,7 +148,7 @@ export const editarCardDetalle = (datos, formDeEditar) => {
            <div class="search-box">
              <label for="tipo-categoria-form">Categoría</label>
              <select class="search-s" name="Categoria" id="tipo-categoria-form">
-             <option value="#">${datos.categoria}</option>  
+             <option>${datos.categoria}</option>  
              <option value="Omega">Omega</option>
                <option value="Alfa">Alfa</option>
                <option value="Beta">Beta</option>

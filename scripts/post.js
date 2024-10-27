@@ -31,13 +31,13 @@ const botonCrearPersonaje = document
     if (
       !nombrePersonaje ||
       !descripcionPersonaje ||
-      !tipoPersonaje ||
-      !especiePersonaje ||
-      !categoriaPersonaje ||
+      tipoPersonaje === "unset" ||
+      especiePersonaje === "unset" ||
+      categoriaPersonaje === "unset" ||
       !avatarPersonaje ||
       !nRealPersonaje ||
       !edadPersonaje
-    ) {
+    ){
       Swal.fire({
         icon: "warning",
         title: "Campos incompletos",

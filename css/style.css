@@ -16,7 +16,7 @@
 main {
   min-height: 100vh;
   padding: 1rem;
-  background-image: linear-gradient(black, #1d1e1d);
+  background-image: linear-gradient(rgb(0, 0, 0), #1d1e1d);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -41,7 +41,14 @@ main {
   color: #fbf007;
 }
 
+.frente {
+  display: flex;
+  justify-content: center;
+}
+
 .card {
+  max-width: 90%;
+  padding-inline: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -54,7 +61,7 @@ main {
     margin-bottom: 1rem;
     background-color: #db0404;
     border-radius: 8px;
-    border: 5px #1d1e1d;
+    border: 5px outset transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,6 +86,7 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    object-fit: cover;
   }
 }
 @media (min-width: 1024px) {

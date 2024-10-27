@@ -30,18 +30,18 @@
           <option value="Especie">Especie</option>
           <option value="Categoria">Categoria</option>
         </select>
-        <select class="search-s hidden" name="" id="tipo-xmen">
+        <select class="search-s hidden" name="tipoXmen" id="tipo-xmen">
           <option value="unset">Buscar por...</option>
           <option value="Xmen">X-MEN</option>
           <option value="Villanos">Villano</option>
         </select>
-        <select class="search-s hidden" name="" id="tipo-enemigo">
+        <select class="search-s hidden" name="tipoEnemigo" id="tipo-enemigo">
           <option value="unset">Buscar por...</option>
           <option value="Humano">Humano</option>
           <option value="Mutantes">Mutante</option>
           <option value="Robot">Robot</option>
         </select>
-        <select class="search-s hidden" name="" id="tipo-nivel">
+        <select class="search-s hidden" name="tipoNivel" id="tipo-nivel">
           <option value="unset">Buscar por...</option>
           <option value="Omega">Omega</option>
           <option value="Alfa">Alfa</option>
@@ -103,7 +103,7 @@
         </section>
         <!-- ********************FORMULARIO PARA CARGAR PERSONAJE******************** -->
         <section class="card-l hidden" id="form-personaje-nuevo">
-          <form class="create" action="">
+          <form class="create">
             <label for="name-personaje-form">Nombre del Personaje</label>
             <input type="text" id="name-personaje-form" />
             <label for="descripcion-personaje-form">Descipción</label>
@@ -171,9 +171,9 @@
         </section>
         <!-- ********************FORMULARIO PARA EDITAR PERSONAJE******************** -->
         <section class="card-l hidden" id="editar-card-descripcion">
-          <form class="create hidden" id="formEditado" action="">
+          <form class="create hidden" id="formEditado">
             <label for="name-personaje">Nombre del Personaje</label>
-            <input type="text" id="name-personaje" value="${datos.name}" />
+            <input type="text" id="name-personaje"/>
             <label for="descripcion-personaje">Descripción</label>
             <input
               type="text"
@@ -219,7 +219,7 @@
             </div>
             <h3 class="create-title">Detalles del Personaje</h3>
             <label for="avatar-personaje">Imagen del Personaje</label>
-            <input type="text" id="avatar-personaje" value="${datos.avatar}" />
+            <input type="text" id="avatar-personaje"/>
             <label for="nombre-real-personaje">Nombre real del Personaje</label>
             <input
               type="text"
@@ -227,7 +227,7 @@
               value="${datos.nombreReal}"
             />
             <label for="edad-personaje">Edad</label>
-            <input type="number" id="edad-personaje" value="${datos.edad}" />
+            <input type="number" id="edad-personaje"/>
             <div class="card-boton">
               <button class="boton-form" id="cancelar-personaje">
                 Cancelar
